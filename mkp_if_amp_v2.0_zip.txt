@@ -1,0 +1,51 @@
+# Name: mkp_if_amp v2.0 (compressed)
+# Type: Public plugin
+# A Textpattern Conditional Plugin for Google's Accelerated Mobile Pages Project (AMP) 
+# Author: Michael K Pate & Patrick LEFEVRE
+# URL: https://github.com/michaelkpate/
+# Recommended load order: 5
+
+# .....................................................................
+# This is a plugin for Textpattern CMS - http://textpattern.com/
+# To install: textpattern > admin > plugins
+# Paste the following text into the 'Install plugin' box:
+# .....................................................................
+
+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
