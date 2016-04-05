@@ -10,11 +10,11 @@ function mkp_if_amp($atts, $thing='')
 
 	global $variable;
 
-	// preg_replace("|^https?://[^/]+|i", "", serverSet('REQUEST_URI')) was copied from the function preText in publish.php
+	// Initiates a TXP variable which sniffs for 'amp' (with or without a final backslash) in URLs or a simple query '?amp'
+	$variable['amp'] = ( preg_match( '/amp/',  $GLOBALS['pretext']['request_uri'] ) || !empty(gps('amp')) ? true : false );
 
 	$parts = explode('/', preg_replace("|^https?://[^/]+|i", "", serverSet('REQUEST_URI')), 5);
 
-	// if the url ends in 'amp' this will return true; otherwise false
-	 
+	// if the url ends in 'amp' this will return true; otherwise fals
 	return (end($parts) == 'amp') ? parse(EvalElse($thing, true)) : parse(EvalElse($thing, false));
 }
