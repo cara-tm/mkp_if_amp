@@ -31,6 +31,20 @@ bc. <txp:mkp_if_amp>
  <txp:output_form form="layout_archives_standard" />
 </txp:_mkp_if_amp>
 
+h3. TXP variable usage
+
+A @<txp:variable name="amp" />@ with true/false value ("1" _or_ "0") is available to play with categories, page links:
+
+bc. <txp:if_variable name="amp" value="1">
+      ... Do some AMP things ...
+      <a href="<txp:site_url />categorie/<txp:category name='<txp:category1 />' />?amp">AMP Category 1 Link</a>
+    <txp:else />
+      ... Do some normal things...
+   </txp:if_variable>
+
+This variable sniffs for a simple @?amp@ query in URLs without returning a 404 page.
+
 h3. Release History
 
 Version 1.0: March 24th, 2016
+Version 2.0: April 5th, 2016. Strongest support for different systems with in build GLOBAL variable. Adding a TXP variable who sniffs for a ?amp query in URLs.
