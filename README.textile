@@ -44,7 +44,26 @@ bc. <txp:if_variable name="amp" value="1">
 
 This variable sniffs for a simple @?amp@ query in URLs without returning a 404 page.
 
+h2. mkp_amp_redirect
+
+A simple tag for web redirection to a subdomain name. Must be used with a mobiles detection script (i.e. adi_mobile plugin). <br>Some Web Designers could choose to use a subdomain for their mobiles websites (may be not recommanded. But the official AMP Blog is located into a subdomain, see: "https://amphtml.wordpress.com":https://amphtml.wordpress.com). In this case, the Textpattern multi-sites capacities makes things easier.
+
+*Good advice*: 
+Copy the @config.php@ file of the main site into the subdomain configuration folder. So, all articles written by the Copy editors will be sent automatically to the 'AMP powered website' from the usual Textpattern administration interface. Designers have a separate and cleaner space to built their AMP pages.
+
+h3. Attributes
+
+* @url@ _string_ (optional): The location (URL) of the website. Default: @hu@ (website URL set in the prefs panel).
+* @subdomain@ _string_ (optional): Sets the subdomain name where to redirect to. Default: @amp@.
+
+h3. Example
+
+bc. <txp:mkp_redirect subdomain="my" />
+
+In this case, If your main domain is <code>example.com</code>, it redirects to the @my.example.com@ subdomain.
+
 h3. Release History
 
 Version 1.0: March 24th, 2016
-Version 2.0: April 5th, 2016. Strongest support for different systems with in build GLOBAL variable. Adding a TXP variable who sniffs for a ?amp query in URLs.
+Version 2.0: April 5th, 2016. Strongest support for different systems with in build GLOBAL variable. Adding a TXP variable who sniffs for a @?amp@ query in URLs.
+Version 3.0: April 6th, 2016. Adding a new TXP tag for subdomain redirection.
