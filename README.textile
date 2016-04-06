@@ -58,7 +58,7 @@ h3. Attributes
 
 h3. Example
 
-bc. <txp:mkp_redirect subdomain="my" />
+bc. <txp:mkp_amp_redirect subdomain="my" />
 
 In this case, If your main domain is <code>example.com</code>, it redirects to the @my.example.com@ subdomain.
 
