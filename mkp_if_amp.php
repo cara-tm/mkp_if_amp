@@ -5,7 +5,7 @@
  * @type:    Public
  * @prefs:   no
  * @order:   5
- * @version: 0.3.0
+ * @version: 3.0
  * @license: GPLv2
 */
 
@@ -14,7 +14,8 @@
  */
 if (class_exists('\Textpattern\Tag\Registry')) {
 	Txp::get('\Textpattern\Tag\Registry')
-		->register('mkp_if_amp');
+		->register('mkp_if_amp')
+		->register('mkp_amp_redirect');
 }
 
 /**
@@ -37,4 +38,34 @@ function mkp_if_amp($atts, $thing='')
 
 	// if the url ends in 'amp' this will return true; otherwise fals
 	return (end($parts) == 'amp') ? parse(EvalElse($thing, true)) : parse(EvalElse($thing, false));
+}
+
+
+/**
+ *
+ * Extracts the domain name and redirects to a subdomain
+ *
+ * @param: $atts Plugin attribute
+ * @return redirection or false
+ */
+function mkp_amp_redirect($atts)
+{
+
+	extract(lAtts(array(
+		'url' 		=> hu,
+		'subdomain'	=> 'amp',
+	), $atts));
+
+	// Array of the URL
+	$parts = parse_url($url);
+	// Verify the host
+	$domain = isset($parts['host']) ? $parts['host'] : '';
+
+	// Regex for a well spelling domain name
+	if( preg_match('/(?P<domain>[a-z0-9][a-z0-9\-]{1,63}\.[a-z\.]{2,6})$/i', $domain, $matches) ) {
+		// Redirecion
+		return header('Location: $parts['scheme'].'://'.$subdomain.'.'.$matches['domain']);
+	}
+	// Otherwise, do nothing
+	return false;
 }
