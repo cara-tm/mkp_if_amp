@@ -5,7 +5,7 @@
  * @type:    Public
  * @prefs:   no
  * @order:   5
- * @version: 0.2.0
+ * @version: 0.3.0
  * @license: GPLv2
 */
 
@@ -13,9 +13,8 @@
  * This plugin tag registry
  */
 if (class_exists('\Textpattern\Tag\Registry')) {
-Txp::get('\Textpattern\Tag\Registry')
-->register('mkp_if_amp')
-;
+	Txp::get('\Textpattern\Tag\Registry')
+		->register('mkp_if_amp');
 }
 
 /**
