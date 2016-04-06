@@ -63,8 +63,8 @@ function mkp_amp_redirect($atts)
 
 	// Regex for a well spelling domain name
 	if( preg_match('/(?P<domain>[a-z0-9][a-z0-9\-]{1,63}\.[a-z\.]{2,6})$/i', $domain, $matches) ) {
-		// Redirecion
-		return header('Location: $parts['scheme'].'://'.$subdomain.'.'.$matches['domain']);
+		// Redirection
+		return header('Location: '.$parts['scheme'].'://'.$subdomain.'.'.$matches['domain']);
 	}
 	// Otherwise, do nothing
 	return false;
