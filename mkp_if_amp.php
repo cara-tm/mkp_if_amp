@@ -39,7 +39,7 @@ function mkp_if_amp_init()
 {
 	global $variable;
 
-	$variable['mkp_amp'] = ( preg_match( '/amp/',  preg_replace('/[^-_a-zA-Z0-9.:]/', '', $_SERVER['HTTP_HOST']).page_url(array()) ) || !empty(gps('amp')) ? 1 : 0 );
+	$variable['mkp_amp'] = ( preg_match( '/amp/',  $GLOBALS['pretext']['request_uri'] ) || !empty(gps('amp')) ? 1 : 0 );
 
 }
 
@@ -57,7 +57,7 @@ function mkp_if_amp($atts, $thing='')
 	global $variable;
 
 	// Initiates a TXP variable which sniffs for 'amp' (with or without a final backslash) in URLs or a simple query '?amp'
-	$variable['mkp_amp'] = ( preg_match( '/amp/',  preg_replace('/[^-_a-zA-Z0-9.:]/', '', $_SERVER['HTTP_HOST']).page_url(array()) ) || !empty(gps('amp')) ? 1 : 0 );
+	$variable['mkp_amp'] = ( preg_match( '/amp/',  $GLOBALS['pretext']['request_uri'] ) || !empty(gps('amp')) ? 1 : 0 );
 
 	// Splits URL parts into a 5 max keys array
 	$parts = explode('/', preg_replace("|^https?://[^/]+|i", "", $GLOBALS['pretext']['request_uri']), 5);
