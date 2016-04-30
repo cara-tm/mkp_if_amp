@@ -29,13 +29,13 @@ bc. <txp:mkp_if_amp>
  <txp:output_form form="layout_archives_amp" />
 <txp:else />
  <txp:output_form form="layout_archives_standard" />
-</txp:_mkp_if_amp>
+</txp:mkp_if_amp>
 
 h3. TXP variable usage
 
-A @<txp:variable name="amp" />@ with true/false value ("1" _or_ "0") is available to play with categories, page links:
+A @<txp:variable name="mkp_amp" />@ with true/false value ("1" _or_ "0") is available to play with categories, page links:
 
-bc. <txp:if_variable name="amp" value="1">
+bc. <txp:if_variable name="mkp_amp" value="1">
       ... Do some AMP things ...
       <a href="<txp:site_url />categorie/<txp:category name='<txp:category1 />' />?amp">AMP Category 1 Link</a>
     <txp:else />
@@ -50,7 +50,7 @@ bc. <txp:mkp_if_amp />
 
 Then, call the amp variable within your website according to your needs:
 
-bc. <txp:if_variable name="amp" value="1">
+bc. <txp:if_variable name="mkp_amp" value="1">
 AMP context
 <txp:else />
 Normal context
@@ -80,3 +80,4 @@ h3. Release History
 Version 1.0: March 24th, 2016
 Version 2.0: April 5th, 2016. Strongest support for different systems with in build GLOBAL variable. Adding a TXP variable who sniffs for a @?amp@ query in URLs.
 Version 3.0: April 6th, 2016. Adding a new TXP tag for subdomain redirection.
+Version 3.1: April 30th, 2016. Better context recognition and better variable creation. Variable name changed to "mkp_amp".
