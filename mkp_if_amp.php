@@ -18,6 +18,32 @@ if (class_exists('\Textpattern\Tag\Registry')) {
 		->register('mkp_amp_redirect');
 }
 
+
+/*
+ * Register callback when public pages are rendering.
+ *
+ */
+if (txpinterface === 'public') {
+	// Loads a callback with init function for public context. 
+	register_callback('mkp_if_amp_init', 'textpattern');
+}
+
+
+/*
+ * Init function which create the mkp_variable
+ *
+ * @param
+ * @return boolean $variable 
+ */
+function mkp_if_amp_init()
+{
+	global $variable;
+
+	$variable['mkp_amp'] = ( preg_match( '/amp/',  preg_replace('/[^-_a-zA-Z0-9.:]/', '', $_SERVER['HTTP_HOST']).page_url(array()) ) || !empty(gps('amp')) ? 1 : 0 );
+
+}
+
+
 /**
  * Main plugin function
  *
@@ -31,7 +57,7 @@ function mkp_if_amp($atts, $thing='')
 	global $variable;
 
 	// Initiates a TXP variable which sniffs for 'amp' (with or without a final backslash) in URLs or a simple query '?amp'
-	$variable['amp'] = ( preg_match( '/amp/',  $GLOBALS['pretext']['request_uri'] ) || !empty(gps('amp')) ? true : false );
+	$variable['mkp_amp'] = ( preg_match( '/amp/',  preg_replace('/[^-_a-zA-Z0-9.:]/', '', $_SERVER['HTTP_HOST']).page_url(array()) ) || !empty(gps('amp')) ? 1 : 0 );
 
 	// Splits URL parts into a 5 max keys array
 	$parts = explode('/', preg_replace("|^https?://[^/]+|i", "", $GLOBALS['pretext']['request_uri']), 5);
@@ -45,7 +71,7 @@ function mkp_if_amp($atts, $thing='')
  *
  * Extracts the domain name and redirects to a subdomain
  *
- * @param: $atts Plugin attribute
+ * @param: $atts array Plugin attribute
  * @return redirection or false
  */
 function mkp_amp_redirect($atts)
