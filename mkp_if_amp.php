@@ -39,6 +39,7 @@ function mkp_if_amp_init()
 {
 	global $variable;
 
+	// Initiates a TXP variable which sniffs for 'amp' (with or without a final backslash) in URLs or a simple query '?amp'
 	$variable['mkp_amp'] = ( preg_match( '/amp/',  $GLOBALS['pretext']['request_uri'] ) || !empty(gps('amp')) ? 1 : 0 );
 
 }
@@ -53,11 +54,6 @@ function mkp_if_amp_init()
  */
 function mkp_if_amp($atts, $thing='')
 {
-
-	global $variable;
-
-	// Initiates a TXP variable which sniffs for 'amp' (with or without a final backslash) in URLs or a simple query '?amp'
-	$variable['mkp_amp'] = ( preg_match( '/amp/',  $GLOBALS['pretext']['request_uri'] ) || !empty(gps('amp')) ? 1 : 0 );
 
 	// Splits URL parts into a 5 max keys array
 	$parts = explode('/', preg_replace("|^https?://[^/]+|i", "", $GLOBALS['pretext']['request_uri']), 5);
@@ -92,7 +88,7 @@ function mkp_amp_redirect($atts)
 	// Regex for a well spelling domain name
 	if( preg_match('/(?P<domain>[a-z0-9][a-z0-9\-]{1,63}\.[a-z\.]{2,6})$/i', $domain, $matches) ) {
 		// Redirects to subdomain without or with the current article's url title.
-		return header( 'Location: '.$parts['scheme'].'://'.$subdomain.'.'.$matches['domain'].($permlink ? $thisarticle['url_title'] : '') );
+		return header( 'Location: '.$parts['scheme'].'://'.$subdomain.'.'.$matches['domain'].($permlink ? '/'.$thisarticle['url_title'] : '') );
 	}
 	// Otherwise, do nothing
 	return false;
