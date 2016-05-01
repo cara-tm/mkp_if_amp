@@ -76,10 +76,12 @@ function mkp_if_amp($atts, $thing='')
  */
 function mkp_amp_redirect($atts)
 {
+	global $thisarticle;
 
 	extract(lAtts(array(
 		'url' 		=> hu,
 		'subdomain'	=> 'amp',
+		'permlink' 	=> false,
 	), $atts));
 
 	// Array of the URL
@@ -89,8 +91,8 @@ function mkp_amp_redirect($atts)
 
 	// Regex for a well spelling domain name
 	if( preg_match('/(?P<domain>[a-z0-9][a-z0-9\-]{1,63}\.[a-z\.]{2,6})$/i', $domain, $matches) ) {
-		// Redirection
-		return header('Location: '.$parts['scheme'].'://'.$subdomain.'.'.$matches['domain']);
+		// Redirects to subdomain without or with the current article's url title.
+		return header( 'Location: '.$parts['scheme'].'://'.$subdomain.'.'.$matches['domain'].($permlink ? $thisarticle['url_title'] : '') );
 	}
 	// Otherwise, do nothing
 	return false;
