@@ -1,3 +1,4 @@
+<?php
 /**
  * mkp_if_amp plugin. Support for Google AMP with Textpattern CMS.
  * @author:  Michael K Pate & Patrick LEFEVRE.
