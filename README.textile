@@ -61,19 +61,24 @@ h2. mkp_amp_redirect
 A simple tag for web redirection to a subdomain name. Must be used with a mobiles detection script (i.e. adi_mobile plugin). <br>Some Web Designers could choose to use a subdomain for their mobiles websites (may be not recommanded. But the official AMP Blog is located into a subdomain, see: "https://amphtml.wordpress.com":https://amphtml.wordpress.com). In this case, the Textpattern multi-sites capacities makes things easier.
 Note: Don't work on local server installation but only on real live servers.
 
+h3. Usage
+
+bc. <txp:mkp_amp_redirect url="" subdomain="" permlink="" />
+
 *Good advice*: 
 Copy the @config.php@ file of the main site into the subdomain configuration folder. So, all articles written by the Copy editors will be sent automatically to the 'AMP powered website' from the usual Textpattern administration interface. Designers have a separate and cleaner space to built their AMP pages.
 
 h3. Attributes
 
-* @url@ _string_ (optional): The location (URL) of the website. Default: @hu@ (website URL set in the prefs panel).
+* @url@ _string_ (optional): The location (URL) of the website. Default: @hu@ (website URL in the prefs panel).
 * @subdomain@ _string_ (optional): Sets the subdomain name where to redirect to. Default: @amp@.
+* @permlink@ _boolean_ (optional): for v 3.2. Choose to redirect the same individual article's title URL within the subdomain. Default: @0@ (false). 
 
 h3. Example
 
-bc. <txp:mkp_amp_redirect subdomain="my" />
+bc. <txp:mkp_amp_redirect subdomain="my" permlink="1" />
 
-In this case, If your main domain is <code>example.com</code>, it redirects to the @my.example.com@ subdomain.
+In this case, If your main domain is <code>example.com</code>, it redirects to the @my.example.com@ subdomain and use the same individual article's URL from the main domain.
 
 h3. Release History
 
@@ -81,3 +86,4 @@ Version 1.0: March 24th, 2016
 Version 2.0: April 5th, 2016. Strongest support for different systems with in build GLOBAL variable. Adding a TXP variable who sniffs for a @?amp@ query in URLs.
 Version 3.0: April 6th, 2016. Adding a new TXP tag for subdomain redirection.
 Version 3.1: April 30th, 2016. Better context recognition and better variable creation. Variable name changed to "mkp_amp".
+Version 3.2: May  , 2016. Support for same individual article's URL within the subdomain.
