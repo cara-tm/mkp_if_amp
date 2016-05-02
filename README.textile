@@ -66,7 +66,7 @@ h3. Usage
 bc. <txp:mkp_amp_redirect url="" subdomain="" permlink="" />
 
 *Good advice*: 
-Copy the @config.php@ file of the main site into the subdomain configuration folder. So, all articles written by the Copy Editors will be sent automatically to the 'AMP powered website' from the usual Textpattern administration interface. But designers have a separate and cleaner space to built their AMP pages.
+Copy the @config.php@ file of the main site into the subdomain configuration folder. So, all articles written by the Copy Editors will be sent automatically to the 'AMP powered website' from only one Textpattern administration interface attached to the "normal" website. But designers have a separate and cleaner space to built their AMP pages.
 
 h3. Attributes
 
