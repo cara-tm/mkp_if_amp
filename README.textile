@@ -4,9 +4,9 @@ This conditional tag examines the url of the current page and determines if the 
 
 h2. Links
 
-* "Github Code Repository":https://github.com/michaelkpate/mkp_if_amp
-* "Download":https://raw.githubusercontent.com/michaelkpate/mkp_if_amp/master/mkp_if_amp.txt
-* "Demo Site":http://ampdemo.cmsstyles.com/
+* "Github Code Repository":https://github.com/cara-tm/mkp_if_amp
+* "Download":https://github.com/cara-tm/mkp_if_amp/blob/master/mkp_if_amp_v3.2_zip.txt
+* "Demo Site for initial plugin":http://ampdemo.cmsstyles.com/
 
 h2. mkp_if_amp
 
@@ -58,7 +58,7 @@ Normal context
 
 h2. mkp_amp_redirect
 
-A simple tag for web redirection to a subdomain name. Must be used with a mobiles detection script (i.e. adi_mobile plugin). <br>Some Web Designers could choose to use a subdomain for their mobiles websites (may be not recommanded. But the official AMP Blog is located into a subdomain, see: "https://amphtml.wordpress.com":https://amphtml.wordpress.com). In this case, the Textpattern multi-sites capacities makes things easier.
+A simple tag for web redirection to a subdomain name. Same feature in use within "The Guadian" website. Must be used with a mobiles detection script (i.e. adi_mobile plugin). <br>Some Web Designers could choose to use a subdomain for their mobiles websites (may be not recommanded. But the official AMP Blog is located into a subdomain, see: "https://amphtml.wordpress.com":https://amphtml.wordpress.com). In this case, the Textpattern multi-sites capacities makes things easier.
 Note: Don't work on local server installation but only on real live servers.
 
 h3. Usage
@@ -66,7 +66,7 @@ h3. Usage
 bc. <txp:mkp_amp_redirect url="" subdomain="" permlink="" />
 
 *Good advice*: 
-Copy the @config.php@ file of the main site into the subdomain configuration folder. So, all articles written by the Copy editors will be sent automatically to the 'AMP powered website' from the usual Textpattern administration interface. Designers have a separate and cleaner space to built their AMP pages.
+Copy the @config.php@ file of the main site into the subdomain configuration folder. So, all articles written by the Copy Editors will be sent automatically to the 'AMP powered website' from the usual Textpattern administration interface. But designers have a separate and cleaner space to built their AMP pages.
 
 h3. Attributes
 
@@ -86,4 +86,4 @@ Version 1.0: March 24th, 2016
 Version 2.0: April 5th, 2016. Strongest support for different systems with in build GLOBAL variable. Adding a TXP variable who sniffs for a @?amp@ query in URLs.
 Version 3.0: April 6th, 2016. Adding a new TXP tag for subdomain redirection.
 Version 3.1: April 30th, 2016. Better context recognition and better variable creation. Variable name changed to "mkp_amp".
-Version 3.2: May  , 2016. Support for same individual article's URL within the subdomain.
+Version 3.2: May 2nd, 2016. Support for same individual article's URL within the subdomain.
