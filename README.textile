@@ -59,7 +59,7 @@ Normal context
 h2. mkp_amp_redirect
 
 A simple tag for web redirection to a subdomain name. Same feature in use within "The Guadian" website. Must be used with a mobiles detection script (i.e. adi_mobile plugin). <br>Some Web Designers could choose to use a subdomain for their mobiles websites (may be not recommanded. But the official AMP Blog is located into a subdomain, see: "https://amphtml.wordpress.com":https://amphtml.wordpress.com). In this case, the Textpattern multi-sites capacities makes things easier.
-Note: Don't work on local server installation but only on real live servers.
+Note: Doesn't work on local server installation but only on real live servers.
 
 h3. Usage
 
