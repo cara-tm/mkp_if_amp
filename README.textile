@@ -31,7 +31,7 @@ bc. <txp:mkp_if_amp>
  <txp:output_form form="layout_archives_standard" />
 </txp:mkp_if_amp>
 
-h3. TXP variable usage
+h2. TXP variable usage
 
 A @<txp:variable name="mkp_amp" />@ with true/false value ("1" _or_ "0") is available to play with categories, page links:
 
@@ -66,7 +66,7 @@ h3. Usage
 bc. <txp:mkp_amp_redirect url="" subdomain="" permlink="" />
 
 *Good advice*: 
-Copy the @config.php@ file of the main site into the subdomain configuration folder. So, all articles written by the Copy Editors will be sent automatically to the 'AMP powered website' from only one Textpattern administration interface attached to the "normal" website. But designers have a separate and cleaner space to built their AMP pages.
+Copy the @config.php@ file of the main site into the subdomain configuration folder in order to share the same database. So, all articles written by the Copy Editors will be sent automatically to the 'AMP powered website' from only one Textpattern administration interface attached to the "normal" website. But designers have a separate and cleaner space to built their AMP pages.
 
 h3. Attributes
 
