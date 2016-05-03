@@ -10,9 +10,11 @@ h2. Links
 
 h2. mkp_if_amp
 
-h3. Attributes
+h3. Attributes (in v 3.3)
 
-h4. None
+* @url@ _string_ (optional): The location (URL) of the website. Default: @hu@ (website URL set in the prefs panel).
+* @subdomain@ _string_ (optional): Sets the subdomain name where to redirect. Default: @amp@.
+* @permlink@ _boolean_ (optional): sets to @false@ ("0") the redirection for the same article's url mode within the subdomain will be not made. Default: @true@ ("1").
 
 h3. Examples
 
