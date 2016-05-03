@@ -55,12 +55,24 @@ function mkp_if_amp_init()
  */
 function mkp_if_amp($atts, $thing='')
 {
+	global $variable;
+
+	extract(lAtts(array(
+		'redirect' 	=> false,
+		'url' 		=> hu,
+		'subdomain' 	=> 'amp',
+		'permlink' 	=> true,
+	), $atts));
 
 	// Splits URL parts into a 5 max keys array
 	$parts = explode('/', preg_replace("|^https?://[^/]+|i", "", $GLOBALS['pretext']['request_uri']), 5);
 
-	// if the url ends in 'amp' this will return true; otherwise fals
-	return (end($parts) == 'amp') ? parse(EvalElse($thing, true)) : parse(EvalElse($thing, false));
+	if ($redirect && '1' == $variable['mkp_amp'])
+		// Redirect to same article's title within the subdomain 'amp'.
+		mkp_amp_redirect(array('url'=>$url,'subdomain'=>$subdomain,'permlink'=>$permlink));
+	else
+		// If the url ends in 'amp' this will return true; otherwise false.
+		return (end($parts) == 'amp') ? parse(EvalElse($thing, true)) : parse(EvalElse($thing, false));
 }
 
 
