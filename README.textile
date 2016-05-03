@@ -8,6 +8,8 @@ h2. Links
 * "Download":https://github.com/cara-tm/mkp_if_amp/blob/master/mkp_if_amp_v3.2_zip.txt
 * "Demo Site for initial plugin":http://ampdemo.cmsstyles.com/
 
+Don't forget to discover this other plugin Google AMP capable: "pat_article_social":https://github.com/cara-tm/pat_article_social
+
 h2. mkp_if_amp
 
 h3. Attributes (in v 3.3)
