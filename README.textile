@@ -89,3 +89,4 @@ Version 2.0: April 5th, 2016. Strongest support for different systems with in bu
 Version 3.0: April 6th, 2016. Adding a new TXP tag for subdomain redirection.
 Version 3.1: April 30th, 2016. Better context recognition and better variable creation. Variable name changed to "mkp_amp".
 Version 3.2: May 2nd, 2016. Support for same individual article's URL within the subdomain.
+Version 3.3: 3rd, 2016. Support for redirection to a subdomain with the same article's title URL when addresses have a "/amp" or "?amp" query. 
