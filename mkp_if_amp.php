@@ -64,8 +64,11 @@ function mkp_if_amp($atts, $thing='')
 		'permlink' 	=> true,
 	), $atts));
 
-	// Splits URL parts into a 5 max keys array
-	$parts = explode('/', preg_replace("|^https?://[^/]+|i", "", $GLOBALS['pretext']['request_uri']), 5);
+	$path = parse_url($GLOBALS['pretext']['request_uri'], PHP_URL_PATH);
+	$els = explode('/', $path);
+
+	// Splits URL parts
+	$parts = explode( '/', preg_replace("|^https?://[^/]+|i", "", $GLOBALS['pretext']['request_uri']), count($els) );
 
 	if ($redirect && '1' == $variable['mkp_amp'])
 		// Redirect to same article's title within the subdomain 'amp'.
