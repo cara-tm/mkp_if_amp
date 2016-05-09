@@ -71,7 +71,7 @@ function mkp_if_amp($atts, $thing='')
 	$parts = explode( '/', preg_replace("|^https?://[^/]+|i", "", $GLOBALS['pretext']['request_uri']), count($els) );
 
 	if ($redirect && '1' == $variable['mkp_amp'])
-		// Redirect to same article's title within the subdomain 'amp'.
+		// Redirect to same article's title within the subdomain.
 		mkp_amp_redirect(array('url'=>$url,'subdomain'=>$subdomain,'permlink'=>$permlink));
 	else
 		// If the url ends in 'amp' this will return true; otherwise false.
