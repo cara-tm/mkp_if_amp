@@ -60,6 +60,20 @@ AMP context
 Normal context
 </txp:if_variable>
 
+h2. mkp_amp_sanitize (in 3.5)
+
+A tag to render article text contents without any inline styles. To use in replacement of the TXP @<txp:body />@ or @<txp:excerpt />@ tags.
+
+h3. Attribute
+
+* @content@ _string_ (optional): choose among "body" or "excerpt" what article content to sanitize. Default: _body_.
+
+h3. Usage
+
+Into an article form:
+
+bc. <txp:mkp_amp_sanitize content="excerpt" />
+
 h2. mkp_amp_redirect
 
 A simple tag for web redirection to a subdomain name. Same feature in use within "The Guadian" website. Must be used with a mobiles detection script (i.e. adi_mobile plugin). <br>Some Web Designers could choose to use a subdomain for their mobiles websites (may be not recommanded. But the official AMP Blog is located into a subdomain, see: "https://amphtml.wordpress.com":https://amphtml.wordpress.com). In this case, the Textpattern multi-sites capacities makes things easier.
@@ -92,3 +106,4 @@ Version 3.0: April 6th, 2016. Adding a new TXP tag for subdomain redirection.
 Version 3.1: April 30th, 2016. Better context recognition and better variable creation. Variable name changed to "mkp_amp".
 Version 3.2: May 2nd, 2016. Support for same individual article's URL within the subdomain.
 Version 3.3: 3rd, 2016. Support for redirection to a subdomain with the same article's title URL when addresses have a "/amp" or "?amp" query. 
+Version 3.5: January 13th 2017. New tag added @<txp:mkp_amp_sanitize="body/excerpt" />@ for inline styles removing into article's text contents. Thks whocarez.
