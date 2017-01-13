@@ -6,7 +6,7 @@
  * @type:    Public
  * @prefs:   no
  * @order:   5
- * @version: 3.4
+ * @version: 3.5
  * @license: GPLv2
 */
 
@@ -16,6 +16,7 @@
 if (class_exists('\Textpattern\Tag\Registry')) {
 	Txp::get('\Textpattern\Tag\Registry')
 		->register('mkp_if_amp')
+		->register('mkp_amp_sanitize')
 		->register('mkp_amp_redirect');
 }
 
@@ -76,6 +77,33 @@ function mkp_if_amp($atts, $thing='')
 	else
 		// If the url ends in 'amp' this will return true; otherwise false.
 		return (end($parts) == 'amp') ? parse(EvalElse($thing, true)) : parse(EvalElse($thing, false));
+}
+
+
+/**
+ *
+ * Sanitize all inline styles into text content
+ *
+ * @param:  $atts array Plugin attribute
+ * @return: string      Text content
+ */
+function mkp_amp_sanitize($atts)
+{
+
+	extract(lAtts(array(
+		'content' 	=> 'body',
+	), $atts));
+
+	$out = '';
+
+	if ( in_array($content, array('body', 'excerpt')) ) {
+		$out = preg_replace('/(<[^>]+) style=".*?"/i','$1', $content());
+	} else {
+		$out = trigger_error( gTxt('invalid_attribute_value', array('{name}' => 'content')), E_USER_WARNING );;
+	}
+
+		return $out;
+
 }
 
 
