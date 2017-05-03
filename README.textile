@@ -74,7 +74,7 @@ bc. <txp:mkp_amp_sanitize content="excerpt" />
 
 h2. mkp_amp_redirect (v3.0 onwards)
 
-A simple tag for web redirection to a subdomain name. Same behaviour as used in _The Guardian_ website. Must be used with a mobiles detection script (i.e. adi_mobile plugin). Some web designers could choose to use a subdomain for their mobiles websites (may be not recommended, but the official AMP Blog is located in a subdomain, see: "https://amphtml.wordpress.com":https://amphtml.wordpress.com). In this case, the Textpattern multi-sites capacities makes things easier.
+A simple tag for web redirection to a subdomain name. Same behaviour as used in _The Guardian_ website. Must be used with a mobiles detection script (i.e. adi_mobile plugin). Some web designers could choose to use a subdomain for their mobiles websites (may be not recommended, but the official AMP Blog is located in a subdomain, see: "https://amphtml.wordpress.com":https://amphtml.wordpress.com). In this case, **the Textpattern multi-sites capacities makes things easier**.
 
 *Note:* Doesn't work on local server installations, only on live servers.
 
