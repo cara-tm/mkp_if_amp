@@ -1,4 +1,4 @@
-h1. mkp_if_amp
+h1. pat_if_amp
 
 AMP pages for Textpattern CMS.
 
@@ -6,13 +6,13 @@ This conditional tag examines the URL of the current page and determines if the 
 
 h2. Links
 
-* "GitHub Code Repository":https://github.com/cara-tm/mkp_if_amp
-* "Download":https://github.com/cara-tm/mkp_if_amp/blob/master/mkp_if_amp_v3.5_zip.txt
+* "GitHub Code Repository":https://github.com/cara-tm/pat_if_amp
+* "Download":https://github.com/cara-tm/mkp_if_amp/blob/master/pat_if_amp_v3.5_zip.txt
 * "Demo Site for initial plugin":http://ampdemo.cmsstyles.com/
 
 Don't forget to check out my other plugin that's also Google AMP compatible: "pat_article_social":https://github.com/cara-tm/pat_article_social
 
-h2. mkp_if_amp
+h2. pat_if_amp
 
 h3. Attributes (v3.3 onwards)
 
@@ -31,7 +31,7 @@ bc. <txp:if_individual_article>
 
 Place something similar to below within your individual article template to display the alternative formatting:
 
-bc. <txp:mkp_if_amp>
+bc. <txp:pat_if_amp>
     <txp:output_form form="amp_page" />
 <txp:else />
     <txp:output_form form="standard_page" />
@@ -39,11 +39,11 @@ bc. <txp:mkp_if_amp>
 
 h2. Textattern variable usage
 
-A @<txp:variable name="mkp_amp" />@ with a true/false value (@1@ or @0@) is automatically generated, for testing when this is an AMP context or not.
+A @<txp:variable name="pat_amp" />@ with a true/false value (@1@ or @0@) is automatically generated, for testing when this is an AMP context or not.
 
 h3. Usage
 
-bc. <txp:if_variable name="mkp_amp" value="1">
+bc. <txp:if_variable name="pat_amp" value="1">
     AMP context
 <txp:else />
     Normal context
@@ -51,14 +51,14 @@ bc. <txp:if_variable name="mkp_amp" value="1">
 
 h3. Example
 
-bc. <txp:if_variable name="mkp_amp" value="1">
+bc. <txp:if_variable name="pat_amp" value="1">
     ...Do some AMP things...
     <a href="<txp:site_url />category/<txp:category name='<txp:category1 />' />?amp">AMP Category 1 Link</a>
 <txp:else />
     ...Do some normal (non-AMP) things...
 </txp:if_variable>
 
-h2. mkp_amp_sanitize (v3.5 onwards)
+h2. pat_amp_sanitize (v3.5 onwards)
 
 A tag to render article text content without any inline styles. To use as a drop-in replacement of the standard Textpattern @<txp:body />@ tag and/or @<txp:excerpt />@ tag.
 
@@ -70,9 +70,9 @@ h3. Usage
 
 In an article Form context:
 
-bc. <txp:mkp_amp_sanitize content="excerpt" />
+bc. <txp:pat_amp_sanitize content="excerpt" />
 
-h2. mkp_amp_redirect (v3.0 onwards)
+h2. pat_amp_redirect (v3.0 onwards)
 
 A simple tag for web redirection to a subdomain name. Same behaviour as used in _The Guardian_ website. Must be used with a mobiles detection script (i.e. adi_mobile plugin). Some web designers could choose to use a subdomain for their mobiles websites (may be not recommended, but the official AMP Blog is located in a subdomain, see: "https://amphtml.wordpress.com":https://amphtml.wordpress.com). In this case, **the Textpattern multi-sites capacities makes things easier**.
 
@@ -80,7 +80,7 @@ A simple tag for web redirection to a subdomain name. Same behaviour as used in 
 
 h3. Usage
 
-bc. <txp:mkp_amp_redirect url="" subdomain="" permlink="" />
+bc. <txp:pat_amp_redirect url="" subdomain="" permlink="" />
 
 *Good advice*: Copy the @config.php@ file of the main site into the subdomain configuration folder in order to share the same database. So, all articles written by the Copy Editors will be sent automatically to the 'AMP powered website' from only one Textpattern administration interface attached to the 'normal' website. But designers have a separate and cleaner space to build their AMP pages.
 
@@ -92,7 +92,7 @@ h3. Attributes
 
 h3. Example
 
-bc. <txp:mkp_amp_redirect subdomain="amp" permlink="1" />
+bc. <txp:pat_amp_redirect subdomain="amp" permlink="1" />
 
 In this case, if your main domain is @example.com@, it redirects to the @amp.example.com@ subdomain and uses the same individual article's URL from the main domain.
 
@@ -105,3 +105,9 @@ h3. Release history
 * Version 3.2: May 2nd, 2016. Support for same individual article's URL within the subdomain.
 * Version 3.3: 3rd, 2016. Support for redirection to a subdomain with the same article's title URL when addresses have a @/amp@ or @?amp@ query.
 * Version 3.5: January 13th 2017. New tag added @<txp:mkp_amp_sanitize />@ that removes any inline CSS style within an article's text contents (body/excerpt). Thanks whocarez.
+* May 9th 2017. Redistribution as 'pat_if_amp'.
+
+h3. Acknowledgments
+
+Many thanks to "Phil Wareham":http://www.designhive.com/contact/phil-wareham who tidied up this plugin code and its help file.
+Thank you to "Michael K. Pate":https://github.com/michaelkpate, for its original idea, who accepted to distribute my entire rewriting code as a 'pat' prefixed plugin.
