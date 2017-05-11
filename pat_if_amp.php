@@ -1,8 +1,8 @@
 <?php
 /**
- * mkp_if_amp plugin. Support for Google AMP with Textpattern CMS.
- * @author:  Michael K Pate & Patrick LEFEVRE.
- * @link:    https://github.com/michaelkpate/mkp_if_amp, https://github.com/cara-tm/mkp_if_amp
+ * pat_if_amp plugin. Support for Google AMP with Textpattern CMS.
+ * @author:  Michael K Pate (original idea) & Patrick LEFEVRE.
+ * @link:    https://github.com/cara-tm/pat_if_amp, https://github.com/michaelkpate/mkp_if_amp
  * @type:    Public
  * @prefs:   no
  * @order:   5
@@ -15,9 +15,9 @@
  */
 if (class_exists('\Textpattern\Tag\Registry')) {
 	Txp::get('\Textpattern\Tag\Registry')
-		->register('mkp_if_amp')
-		->register('mkp_amp_sanitize')
-		->register('mkp_amp_redirect');
+		->register('pat_if_amp')
+		->register('pat_amp_sanitize')
+		->register('pat_amp_redirect');
 }
 
 /**
@@ -26,7 +26,7 @@ if (class_exists('\Textpattern\Tag\Registry')) {
  */
 if (txpinterface === 'public') {
 	// Loads a callback with init function for public context.
-	register_callback('mkp_if_amp_init', 'textpattern');
+	register_callback('pat_if_amp_init', 'textpattern');
 }
 
 /**
@@ -35,12 +35,12 @@ if (txpinterface === 'public') {
  * @param
  * @return boolean $variable
  */
-function mkp_if_amp_init()
+function pat_if_amp_init()
 {
 	global $variable;
 
 	// Initiates a TXP variable which sniffs for 'amp' (with or without a final backslash) in URLs or a simple query '?amp'
-	$variable['mkp_amp'] = (preg_match( '/amp/',  $GLOBALS['pretext']['request_uri'] ) || !empty(gps('amp')) ? 1 : 0 );
+	$variable['pat_amp'] = (preg_match( '/amp/',  $GLOBALS['pretext']['request_uri'] ) || !empty(gps('amp')) ? 1 : 0 );
 }
 
 /**
@@ -50,7 +50,7 @@ function mkp_if_amp_init()
  * @param  $thing  string
  * @return string
  */
-function mkp_if_amp($atts, $thing='')
+function pat_if_amp($atts, $thing='')
 {
 	global $variable;
 
@@ -69,7 +69,7 @@ function mkp_if_amp($atts, $thing='')
 
 	if ($redirect && '1' == $variable['mkp_amp']) {
 		// Redirect to same article's title within the subdomain.
-		mkp_amp_redirect(array('url'=>$url,'subdomain'=>$subdomain,'permlink'=>$permlink));
+		pat_amp_redirect(array('url'=>$url,'subdomain'=>$subdomain,'permlink'=>$permlink));
 	} else {
 		// If the URL ends in 'amp' this will return true; otherwise false.
 		return (end($parts) == 'amp') ? parse(EvalElse($thing, true)) : parse(EvalElse($thing, false));
@@ -82,7 +82,7 @@ function mkp_if_amp($atts, $thing='')
  * @param:  $atts array Plugin attribute
  * @return: string      Text content
  */
-function mkp_amp_sanitize($atts)
+function pat_amp_sanitize($atts)
 {
 	extract(lAtts(array(
 		'content' => 'body',
@@ -105,7 +105,7 @@ function mkp_amp_sanitize($atts)
  * @param: $atts array Plugin attribute
  * @return redirection or false
  */
-function mkp_amp_redirect($atts)
+function pat_amp_redirect($atts)
 {
 	global $pretext, $thisarticle;
 
