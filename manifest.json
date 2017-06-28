@@ -1,0 +1,11 @@
+{
+  "name": "pat_if_amp",
+  "description": "AMP pages for Textpattern CMS",
+  "version": "0.3.5",
+  "type": 0,
+  "author": "Patrick LEFEVRE (original idea by Michael K Pate)",
+  "author_uri": "https://github.com/cara-tm/",
+  "order": 5,
+  "flags": 0,
+  "help": {"file" : ["./README.textile"]}
+}
