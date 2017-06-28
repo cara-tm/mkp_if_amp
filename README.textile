@@ -12,6 +12,14 @@ h2. Links
 
 Don't forget to check out my other plugin that's also Google AMP compatible: "pat_article_social":https://github.com/cara-tm/pat_article_social
 
+h2. Installing
+
+Using "Composer":https://getcomposer.org:
+
+bc. $ composer require cara-tm/pat_if_amp:*
+
+Or download the latest version of the plugin from "the GitHub project page":https://github.com/cara-tm/pat_if_amp/releases, paste the code into the Textpattern Plugins administration panel, install and enable the plugin.
+
 h2. pat_if_amp
 
 h3. Attributes (v3.3 onwards)
