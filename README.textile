@@ -1,6 +1,6 @@
 h1. pat_if_amp
 
-AMP pages for "Textpattern CMS":http://textpattern.io/ ("http://textpattern.io/":http://textpattern.io/).
+AMP pages for "Textpattern CMS":http://textpattern.io/.
 
 This conditional tag examines the URL of the current page and determines if the URL ends in 'amp.' This allows for a custom page to be rendered using the standards for Google's Accelerated Mobile Pages (AMP) project.
 
