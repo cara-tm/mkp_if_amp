@@ -22,7 +22,7 @@ Or download the latest version of the plugin from "the GitHub project page":http
 
 h2. pat_if_amp
 
-h3. Attributes (v3.3 onwards)
+h3. Attributes
 
 * @url@ _string_ (optional): The location (URL) of the website. Default: @hu@ (website URL as set in the Textpattern preferences panel).
 * @subdomain@ _string_ (optional): Sets the subdomain name of where to redirect to. Default: @amp@.
@@ -66,7 +66,7 @@ bc. <txp:if_variable name="pat_amp" value="1">
     ...Do some normal (non-AMP) things...
 </txp:if_variable>
 
-h2. pat_amp_sanitize (v3.5 onwards)
+h2. pat_amp_sanitize
 
 A tag to render article text content without any inline styles. To use as a drop-in replacement of the standard Textpattern @<txp:body />@ tag and/or @<txp:excerpt />@ tag.
 
@@ -80,7 +80,7 @@ In an article Form context:
 
 bc. <txp:pat_amp_sanitize content="excerpt" />
 
-h2. pat_amp_redirect (v3.0 onwards)
+h2. pat_amp_redirect
 
 A simple tag for web redirection to a subdomain name. Same behaviour as used in _The Guardian_ website. Must be used with a mobiles detection script (i.e. adi_mobile plugin). Some web designers could choose to use a subdomain for their mobiles websites (may be not recommended, but the official AMP Blog is located in a subdomain, see: "https://amphtml.wordpress.com":https://amphtml.wordpress.com). In this case, **the Textpattern multi-sites capacities makes things easier**.
 
@@ -96,7 +96,7 @@ h3. Attributes
 
 * @url@ _string_ (optional): The location (URL) of the website. Default: @hu@ (website URL as set in the Textpattern preferences panel).
 * @subdomain@ _string_ (optional): Sets the subdomain name of where to redirect to. Default: @amp@.
-* @permlink@ _boolean_ (optional): (v3.2 onwards) Choose to redirect the same individual article's title URL within the subdomain. Default: @0@ (false).
+* @permlink@ _boolean_ (optional): Choose to redirect the same individual article's title URL within the subdomain. Default: @0@ (false).
 
 h3. Example
 
