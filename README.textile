@@ -45,7 +45,7 @@ bc. <txp:pat_if_amp>
     <txp:output_form form="standard_page" />
 </txp:mkp_if_amp>
 
-h2. Textattern variable usage
+h2. Textpattern variable usage
 
 A @<txp:variable name="pat_amp" />@ with a true/false value (@1@ or @0@) is automatically generated, for testing when this is an AMP context or not.
 
