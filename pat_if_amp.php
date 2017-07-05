@@ -274,6 +274,8 @@ bc. <txp:if_variable name="pat_amp" value="1">
     ...Do some normal (non-AMP) things...
 </txp:if_variable>
 
+This example concerns categories, use kind of the same model for @pages@ and/or @archives@.
+
 h2. pat_amp_sanitize
 
 A tag to render article text content without any inline styles. To use as a drop-in replacement of the standard Textpattern @<txp:body />@ tag and/or @<txp:excerpt />@ tag.
