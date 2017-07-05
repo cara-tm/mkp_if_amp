@@ -1,6 +1,6 @@
 {
   "name": "pat_if_amp",
-  "description": "AMP pages for Textpattern CMS",
+  "description": "Google AMP for Textpattern CMS",
   "version": "0.3.6-beta",
   "type": 0,
   "author": "Patrick LEFEVRE (original idea by Michael K Pate)",

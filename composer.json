@@ -1,6 +1,6 @@
 {
 	"name": "cara-tm/pat_if_amp",
-	"description": "Create, publish and edit plugins from within Textpattern CMS",
+	"description": "Google AMP for Textpattern CMS.",
 	"keywords": ["textpattern", "plugin", "amp", "amp-html", "google-amp"],
 	"homepage": "https://github.com/cara-tm/pat_if_amp",
 	"license": "GPL-2.0",
