@@ -208,6 +208,8 @@ if (0) {
 # --- BEGIN PLUGIN HELP ---
 h1. pat_if_amp
 
+"Download":https://github.com/cara-tm/pat_if_amp/releases | "Packagist":https://packagist.org/packages/cara-tm/pat_if_amp
+
 AMP pages for "Textpattern CMS":http://textpattern.io/.
 
 This conditional tag examines the URL of the current page and determines if the URL ends in 'amp.' This allows for a custom page to be rendered using the standards for Google's Accelerated Mobile Pages (AMP) project.
