@@ -112,7 +112,7 @@ function pat_if_amp_init()
 	global $variable;
 
 	// Initiates a TXP variable which sniffs for 'amp' (with or without a final backslash) in URLs or a simple query '?amp'
-	$variable['pat_amp'] = (preg_match( '/amp/',  $GLOBALS['pretext']['request_uri'] ) || !empty(gps('amp')) ? 1 : 0 );
+	$variable['pat_amp'] = (preg_match( '/amp/',  $GLOBALS['pretext']['request_uri'] ) || gps('amp') ? 1 : 0 );
 }
 
 /**
