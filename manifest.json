@@ -1,7 +1,7 @@
 {
   "name": "pat_if_amp",
   "description": "Google AMP for Textpattern CMS",
-  "version": "0.3.6-beta",
+  "version": "0.3.6",
   "type": 0,
   "author": "Patrick LEFEVRE (original idea by Michael K Pate)",
   "author_uri": "https://github.com/cara-tm/",

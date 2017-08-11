@@ -17,7 +17,7 @@ $plugin['name'] = 'pat_if_amp';
 // 1 = Plugin help is in raw HTML.  Not recommended.
 # $plugin['allow_html_help'] = 1;
 
-$plugin['version'] = '0.3.6-beta';
+$plugin['version'] = '0.3.6';
 $plugin['author'] = 'Patrick LEFEVRE (original idea by Michael K Pate)';
 $plugin['author_uri'] = 'https://github.com/cara-tm/';
 $plugin['description'] = 'AMP pages for Textpattern CMS';
