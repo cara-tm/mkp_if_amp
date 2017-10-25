@@ -112,3 +112,5 @@ h3. Acknowledgments
 
 Many thanks to "Phil Wareham":http://www.designhive.com/contact/phil-wareham who tidied up this plugin code and its help file.
 Thank you to "Michael K. Pate":https://github.com/michaelkpate, for its original idea, who accepted to distribute my entire rewriting code as a 'pat' prefixed plugin.
+
+!https://raw.githubusercontent.com/cara-tm/pat_if_amp/master/amp-project-textpattern-cms-mention.png!
