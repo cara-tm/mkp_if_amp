@@ -17,7 +17,7 @@ $plugin['name'] = 'pat_if_amp';
 // 1 = Plugin help is in raw HTML.  Not recommended.
 # $plugin['allow_html_help'] = 1;
 
-$plugin['version'] = '0.3.6';
+$plugin['version'] = '0.3.7';
 $plugin['author'] = 'Patrick LEFEVRE (original idea by Michael K Pate)';
 $plugin['author_uri'] = 'https://github.com/cara-tm/';
 $plugin['description'] = 'AMP pages for Textpattern CMS';
@@ -78,7 +78,7 @@ if (!defined('txpinterface'))
  * @type:    Public
  * @prefs:   no
  * @order:   5
- * @version: 0.3.6
+ * @version: 0.3.7
  * @license: GPLv2
 */
 
@@ -112,7 +112,7 @@ function pat_if_amp_init()
 	global $variable;
 
 	// Initiates a TXP variable which sniffs for 'amp' (with or without a final backslash) in URLs or a simple query '?amp'
-	$variable['pat_amp'] = (preg_match( '/amp/',  $GLOBALS['pretext']['request_uri'] ) || gps('amp') ? 1 : 0 );
+	$variable['pat_amp'] = (preg_match( '/[\/\?](amp)/s',  $GLOBALS['pretext']['request_uri']) || gps('amp') ? 1 : 0);
 }
 
 /**
