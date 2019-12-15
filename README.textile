@@ -14,6 +14,10 @@ h2. Links
 
 Don't forget to check out my other plugin that's also Google AMP compatible: "pat_article_social":https://github.com/cara-tm/pat_article_social
 
+h2. Note
+
+Since TXP 4.7+ and its new features, you can choose to use build-in tags solution instead of this plugin. Read more about from "this forum post by Oleg":https://forum.textpattern.com/viewtopic.php?pid=320549#p320549 (don't forget to add a TXP variable on the fly for further usages within you website).
+
 h2. Installing
 
 Using "Composer":https://getcomposer.org:
